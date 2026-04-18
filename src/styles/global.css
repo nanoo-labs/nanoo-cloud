@@ -19,14 +19,14 @@ body {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-[#000000];
-  @apply text-black/50 dark:text-white/75;
+  @apply bg-white dark:bg-[#000000];
+  @apply text-zinc-900/80 dark:text-white/80;
 }
 
 header {
-  @apply fixed left-0 right-0 top-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-[#000000]/25;
-  @apply saturate-200 backdrop-blur-sm;
+  @apply fixed top-0 left-0 right-0 z-50 py-5;
+  @apply bg-white/75 dark:bg-[#000000]/25;
+  @apply backdrop-blur-sm saturate-200;
 }
 
 main {
@@ -38,9 +38,33 @@ footer {
 }
 
 article {
-  @apply prose max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-headings:text-zinc-900 prose-headings:dark:text-white;
+  @apply prose-p:text-zinc-600 prose-p:dark:text-white/70;
+}
+
+@layer base {
+  ::selection {
+    @apply bg-cyan-400/30 text-black dark:bg-cyan-400 dark:text-black;
+  }
+
+  /* scrollbar style */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-stone-300 dark:bg-stone-800 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-stone-400 dark:bg-cyan-900;
+  }
 }
 
 @layer utilities {
