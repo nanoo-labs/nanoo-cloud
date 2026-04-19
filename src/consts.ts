@@ -1,7 +1,7 @@
 import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "Nanoo",
+  NAME: "Nanoo Labs",
   EMAIL: "dev@nanoo.cloud",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
@@ -40,6 +40,6 @@ export const SOCIALS: Socials = [
   },
   {
     NAME: "instagram",
-    HREF: "https://www.linkedin.com/in/markhorn-dev",
+    HREF: "https://www.instagram.com/nanoo.labs",
   },
 ];

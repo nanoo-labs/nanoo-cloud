@@ -10,7 +10,7 @@ const { entry } = Astro.props;
 
 <a
   href={`/${entry.collection}/${entry.slug}`}
-  class="group relative flex flex-nowrap rounded-lg border border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:text-black dark:border-white/25 dark:hover:text-cyan-400"
+  class="group relative flex flex-nowrap rounded-lg border border-black/15 px-4 py-3 pr-10 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-cyan-700 dark:border-white/25 dark:hover:bg-white/5 dark:hover:text-cyan-400"
 >
   <div class="flex flex-1 flex-col truncate">
     <div class="font-semibold">
@@ -23,7 +23,7 @@ const { entry } = Astro.props;
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    class="absolute right-2 top-1/2 size-5 -translate-y-1/2 fill-none stroke-current stroke-2 transition-colors duration-300 ease-in-out group-hover:stroke-black dark:group-hover:stroke-cyan-400"
+    class="absolute right-2 top-1/2 size-5 -translate-y-1/2 fill-none stroke-current stroke-2 transition-colors duration-300 ease-in-out group-hover:stroke-cyan-700 dark:group-hover:stroke-cyan-400"
   >
     <line
       x1="5"
