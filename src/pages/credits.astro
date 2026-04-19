@@ -26,7 +26,8 @@ const CREDITS = [
   },
   {
     NAME: "Geist Sans",
-    DESCRIPTION: "Modern typography designed by Vercel for technical interfaces.",
+    DESCRIPTION:
+      "Modern typography designed by Vercel for technical interfaces.",
     HREF: "https://vercel.com/font/sans",
   },
   {
@@ -53,29 +54,36 @@ const CREDITS = [
     NAME: "Prettier",
     DESCRIPTION: "Keeping the codebase clean and consistently formatted.",
     HREF: "https://prettier.io",
-  }
+  },
 ];
 ---
 
-<PageLayout title="Credits" description="The tools and technologies that power this website.">
+<PageLayout
+  title="Credits"
+  description="The tools and technologies that power this website."
+>
   <Container>
     <div class="space-y-10">
-      <div class="animate font-semibold text-black dark:text-white">Credits</div>
+      <div class="animate font-semibold text-black dark:text-white">
+        Credits
+      </div>
       <p class="animate">
-        This project is made possible by the incredible open-source community and 
-        the following technologies:
+        This project is made possible by the incredible open-source community
+        and the following technologies:
       </p>
       <ul class="flex flex-col space-y-8">
         {
           CREDITS.map((credit) => (
             <li class="animate">
               <div class="space-y-1">
-                <Link href={credit.HREF} external class="font-semibold text-black dark:text-white">
+                <Link
+                  href={credit.HREF}
+                  external
+                  class="font-semibold text-black dark:text-white"
+                >
                   {credit.NAME}
                 </Link>
-                <div class="text-sm opacity-75">
-                  {credit.DESCRIPTION}
-                </div>
+                <div class="text-sm opacity-75">{credit.DESCRIPTION}</div>
               </div>
             </li>
           ))

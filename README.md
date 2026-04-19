@@ -1,4 +1,4 @@
-# Nanoo Labs Website 
+# Nanoo Labs Website
 
 A minimalist, high performance website and blog built with **Astro 5**, **Tailwindcss**. Designed with a focus on speed, aesthetics, and a "developer-first" experience.
 
@@ -14,14 +14,14 @@ A minimalist, high performance website and blog built with **Astro 5**, **Tailwi
 
 All commands are run from the root of the project:
 
-| Command | Action |
-| :--- | :--- |
-| `pnpm install` | Install dependencies |
-| `pnpm dev` | Start local dev server at `localhost:4321` |
-| `pnpm build` | Build your production site to `./dist/` |
+| Command        | Action                                      |
+| :------------- | :------------------------------------------ |
+| `pnpm install` | Install dependencies                        |
+| `pnpm dev`     | Start local dev server at `localhost:4321`  |
+| `pnpm build`   | Build your production site to `./dist/`     |
 | `pnpm preview` | Preview your build locally before deploying |
-| `pnpm format` | Format entire project with prettier |
-| `pnpm lint` | Run ESLint for code quality checks |
+| `pnpm format`  | Format entire project with prettier         |
+| `pnpm lint`    | Run ESLint for code quality checks          |
 
 ---
 

@@ -24,17 +24,17 @@ body {
 }
 
 header {
-  @apply fixed top-4 left-0 right-0 z-50;
+  @apply fixed left-0 right-0 top-4 z-50;
   @apply flex items-center justify-center;
 }
 
 header .nav-container {
   @apply flex items-center justify-between gap-4;
   @apply bg-white/70 dark:bg-black/50;
-  @apply backdrop-blur-md saturate-200;
+  @apply saturate-200 backdrop-blur-md;
   @apply border border-black/15 dark:border-white/25;
   @apply rounded-lg px-6 py-2;
-  @apply w-full max-w-[800px] mx-4 sm:mx-0;
+  @apply mx-4 w-full max-w-[800px] sm:mx-0;
   @apply transition-all duration-300 ease-in-out;
 }
 
@@ -47,7 +47,7 @@ footer {
 }
 
 article {
-  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold;
   @apply prose-headings:text-zinc-900 prose-headings:dark:text-white;
   @apply prose-p:text-zinc-600 prose-p:dark:text-white/70;
@@ -81,7 +81,7 @@ article :not(pre) > code {
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-zinc-300 dark:bg-stone-800 rounded-full;
+    @apply rounded-full bg-zinc-300 dark:bg-stone-800;
   }
 
   ::-webkit-scrollbar-thumb:hover {
