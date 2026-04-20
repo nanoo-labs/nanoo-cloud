@@ -29,6 +29,11 @@ export const PROJECTS: Metadata = {
     "A collection of my projects, with links to repositories and demos.",
 };
 
+export const CONTRIBUTOR: Metadata = {
+  TITLE: "Contributor",
+  DESCRIPTION: "people who contribute to nanoo labs.",
+};
+
 export const SOCIALS: Socials = [
   {
     NAME: "twitter-x",
