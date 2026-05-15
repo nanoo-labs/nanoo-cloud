@@ -1,0 +1,12 @@
+# Prettier ignore
+node_modules
+.astro
+dist
+package-lock.json
+pnpm-lock.yaml
+public/pagefind
+public/y-wing.jpeg
+public/*.jpg
+public/*.png
+public/*.svg
+public/*.ico

@@ -26,15 +26,19 @@ export const PROJECTS: Metadata = {
 
 export const SOCIALS: Socials = [
   {
-    NAME: "X (formerly Twitter)",
-    HREF: "https://twitter.com/nanoolabs",
+    NAME: "X",
+    HREF: "https://x.com/nanoolabs",
   },
   {
     NAME: "GitHub",
     HREF: "https://github.com/nanoolabs",
   },
   {
-    NAME: "Website",
-    HREF: "https://nanoolabs.dev",
+    NAME: "Instagram",
+    HREF: "https://www.instagram.com/nanoolabs",
+  },
+  {
+    NAME: "Email",
+    HREF: "mailto:hi@nanoolabs.dev",
   },
 ];
