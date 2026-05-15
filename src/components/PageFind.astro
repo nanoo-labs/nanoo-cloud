@@ -6,7 +6,7 @@ import Search from "astro-pagefind/components/Search";
   <div
     transition:persist
     id="backdrop"
-    class="bg-black/50 invisible fixed top-0 left-0 z-50 flex h-screen w-full justify-center p-6 backdrop-blur-xs"
+    class="invisible fixed top-0 left-0 z-50 flex h-screen w-full justify-center bg-black/50 p-6 backdrop-blur-xs"
   >
     <div
       id="pagefind-container"
@@ -42,6 +42,7 @@ import Search from "astro-pagefind/components/Search";
     }, 0);
     backdrop?.classList.remove("invisible");
     backdrop?.classList.add("visible");
+    document.body.classList.add("no-scroll");
   }
 
   function closePagefind() {
@@ -49,6 +50,7 @@ import Search from "astro-pagefind/components/Search";
     search.value = "";
     backdrop?.classList.remove("visible");
     backdrop?.classList.add("invisible");
+    document.body.classList.remove("no-scroll");
   }
 
   // open pagefind
