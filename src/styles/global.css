@@ -1,14 +1,16 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: Geist Sans, ui-sans-serif, system-ui, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono: Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-sans:
+    Geist Sans, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 /*
@@ -43,50 +45,89 @@
   html,
   body {
     @apply size-full;
+    body {
+      @apply font-sans antialiased;
+      @apply flex flex-col;
+      @apply bg-white dark:bg-[#050505];
+      @apply text-zinc-900/80 dark:text-white/80;
+    }
+
+    header {
+      @apply fixed top-4 right-0 left-0 z-50;
+      @apply flex items-center justify-center;
+    }
+
+    header .nav-container {
+      @apply flex items-center justify-between gap-4;
+      @apply bg-white/70 dark:bg-black/50;
+      @apply saturate-200 backdrop-blur-md;
+      @apply border border-black/15 dark:border-white/25;
+      @apply rounded-lg px-6 py-2;
+      @apply mx-4 w-full max-w-[800px] sm:mx-0;
+      @apply transition-all duration-300 ease-in-out;
+    }
+
+    main {
+      @apply flex-1 py-32;
+    }
+
+    footer {
+      @apply py-6 text-sm;
+    }
+
+    article {
+      @apply prose dark:prose-invert prose-img:mx-auto prose-img:my-auto max-w-full;
+      @apply prose-headings:font-semibold;
+      @apply prose-headings:text-zinc-900 prose-headings:dark:text-white;
+      @apply prose-p:text-zinc-600 prose-p:dark:text-white/70;
+    }
   }
 
-  body {
-    @apply font-sans antialiased;
-    @apply flex flex-col;
-    @apply bg-neutral-100 dark:bg-neutral-900;
-    @apply text-black/75 dark:text-white/75;
+  @layer base {
+    ::selection {
+      @apply bg-cyan-200 text-zinc-900 dark:bg-cyan-400 dark:text-black;
+    }
+
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      @apply w-2;
+    }
+
+    ::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-zinc-300 dark:bg-stone-800;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-zinc-400 dark:bg-cyan-900;
+    }
   }
 
-  header {
-    @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-neutral-100/75 dark:bg-neutral-900/75;
-    @apply saturate-200 backdrop-blur-xs;
+  @layer utilities {
+    article a {
+      @apply font-sans text-current underline underline-offset-2;
+      @apply decoration-zinc-300 dark:decoration-cyan-400/30;
+      @apply transition-colors duration-300 ease-in-out;
+    }
+    article a:hover {
+      @apply text-cyan-700 dark:text-cyan-400;
+      @apply decoration-cyan-500/50 dark:decoration-cyan-400/50;
+    }
   }
 
-  main {
-    @apply flex-1 py-32;
+  /* shiki config */
+  pre {
+    @apply border-l-2 border-cyan-400 bg-zinc-100/50 dark:bg-[#0a0a0a];
+    @apply py-5;
+    @apply rounded-r-lg;
+  }
+  article :not(pre) > code {
+    @apply rounded bg-zinc-100 px-1 py-0.5 text-cyan-700 dark:bg-white/10 dark:text-cyan-400;
   }
 
-  footer {
-    @apply py-6 text-sm;
-  }
-
-  article {
-    @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-    @apply prose-headings:font-semibold;
-    @apply prose-headings:text-black dark:prose-headings:text-white;
-  }
-}
-
-@layer utilities {
-  article a {
-    @apply font-sans text-current underline underline-offset-[3px];
-    @apply decoration-black/30 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
-  }
-  article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/50 dark:decoration-white/50;
-  }
-}
-
-.animate {
-  @apply -translate-y-3 opacity-0;
   @apply transition-all duration-300 ease-out;
 }
 
@@ -137,7 +178,7 @@ pre {
 
 /* copy code button on codeblocks */
 .copy-code {
-  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+  @apply absolute top-3 right-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
 }
 
 .copy-code:hover {
